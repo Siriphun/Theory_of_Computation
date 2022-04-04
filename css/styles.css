@@ -1,0 +1,24 @@
+table td, table td * {
+    vertical-align: top;
+}
+body{
+    background-color: #EAFFEC;
+    color:#547FA3 ;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+#container {
+    min-width: 310px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.choose{
+ background-color: #9FAFA1;
+ color:white ;
+ border-radius: 2px;
+}
