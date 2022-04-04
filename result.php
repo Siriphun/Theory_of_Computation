@@ -17,6 +17,8 @@ table td, table td * {
 <?php
 session_start();
 clearstatcache();
+
+
 ?>
 
 <html>
@@ -24,12 +26,41 @@ clearstatcache();
     <title>Select your pair</title> 
 </head>
 <body>
+
+<? echo"$_SESSION" ?>
+
+<form method="POST" action="index.php">
+        <label for="coin"> Choose yourcoin to predic :</label>
+        <select name="coin" onchange="OnSelectionChange()">
+            <?php
+            if (($handle = fopen("cyrpto_link.csv", "r")) !== FALSE) {
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    if($data[0] != "pair of coins"){
+                        // data[0] is pair of coins, data[1] is link to that pair
+                        ?>
+                        <option value= "<?php  echo $data[1] ?>" > <?php echo "$data[0]" ?> </option>
+                        <?php
+                    }
+                }
+                fclose($handle);
+            }
+            ?>
+        </select>
+        <input type="submit" name="submit" value="Submit this pair"/>
+</form>
+
+
+
 <br><br>
 <table class="center" width="80%" border="0" cellspacing="0">
     <td width="20%">
         <h2><?php
         
-        $link = $_SESSION["link"]; 
+        
+        $link = $_SESSION["link"];
+        
+
+
         $coinname=shell_exec("python getcoinname.py "  .$link);
         echo"$coinname";
         ?></h2>

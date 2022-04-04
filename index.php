@@ -1,35 +1,24 @@
-<html>
-<head> 
-    <title>Select your pair</title> 
-</head>
-<body>
-    <form method="POST" action="predic.php">
-        <label for="coin"> Choose yourcoin to predic :</label>
-        <select name="coin" onchange="OnSelectionChange()">
-            <?php
-            if (($handle = fopen("cyrpto_link.csv", "r")) !== FALSE) {
-                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                    if($data[0] != "pair of coins"){
-                        // data[0] is pair of coins, data[1] is link to that pair
-                        ?>
-                        <option value= "<?php  echo $data[1] ?>" > <?php echo "$data[0]" ?> </option>
-                        <?php
-                    }
-                }
-                fclose($handle);
-            }
-            ?>
-        </select>
-        <input type="submit" name="submit" value="Submit this pair"/>
-    </form>
+<?php
+        if(isset($_POST['submit'])){
+            $getlink = $_POST["coin"];
+            echo "link : ".$getlink."<br>";
+        }
 
-</body>
-</html>
+        session_start();
+        $_SESSION["link"] = "https://www.cryptodatadownload.com/cdd/Binance_BTCUSDT_d.csv";
+        if($getlink != NULL){
+            $_SESSION["link"] = $getlink;
+        }
 
+?>
 
+<?php
 
-<?php //action="predic.php" ฝากไว้ก่อนเถอะ !!!! ?>
+$data = $_POST["coin"]; 
+$output=shell_exec("python toMl.py "  .$data);
 
+#echo $output;
+header("Location: result.php");
+exit();
 
-
-
+?>
