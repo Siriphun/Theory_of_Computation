@@ -1,4 +1,7 @@
-<?php
+<html>
+    <title></title>
+    <body>
+    <?php
         if(isset($_POST['submit'])){
             $getlink = $_POST["coin"];
             echo "link : ".$getlink."<br>";
@@ -22,3 +25,6 @@ header("Location: result.php");
 exit();
 
 ?>
+
+    </body>
+</html>

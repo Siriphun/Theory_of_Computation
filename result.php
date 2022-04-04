@@ -1,34 +1,21 @@
-<style>
-    #container {
-    min-width: 310px;
-    height: 400px;
-    margin: 0 auto;
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table td, table td * {
-    vertical-align: top;
-}
-</style>
+<html>
+<title>name</title>
+<html>
+<head> 
+    <title>Select your pair</title> 
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 <?php
 session_start();
 clearstatcache();
 
-
 ?>
-
-<html>
-<head> 
-    <title>Select your pair</title> 
-</head>
-<body>
-
 <? echo"$_SESSION" ?>
-
+<div class="choose">
 <form method="POST" action="index.php">
         <label for="coin"> Choose yourcoin to predic :</label>
         <select name="coin" onchange="OnSelectionChange()">
@@ -48,7 +35,7 @@ clearstatcache();
         </select>
         <input type="submit" name="submit" value="Submit this pair"/>
 </form>
-
+        </div>
 
 
 <br><br>
@@ -122,3 +109,6 @@ clearstatcache();
     }
 });
 </script>
+</html>
+
+
