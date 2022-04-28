@@ -1,5 +1,7 @@
 <html>
-<head> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Select your pair</title> 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +20,14 @@ clearstatcache();
 ?>
 <? echo"$_SESSION" ?>
 <div class="topnav">
-  <form method="POST" action="index.php">
-        <label for="coin"> Choose yourcoin to predic :</label>
-            
-            <select name="coin" class="classic" onchange="OnSelectionChange()" >
+    <form method="POST" action="index.php">
+    <table width="25%" padding="0" margin="0" border="0">
+        <tr> 
+            <td style="vertical-align: center;">
+                <label for="coin"> Choose yourcoin to predic :</label>
+            </td>
+            <td style="vertical-align: bottom;">
+                <select name="coin" class="classic" onchange="OnSelectionChange()">
                 <?php
                 if (($handle = fopen("cyrpto_link.csv", "r")) !== FALSE) {
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -35,10 +41,21 @@ clearstatcache();
                     fclose($handle);
                 }
                 ?>
-            </select>
-           
-        <input type="submit" name="submit" value="Submit this pair"/>
-</form>
+                </select>
+            </td>
+            <td style="vertical-align: top;">
+                <input type="submit" name="submit" value="Submit this pair"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+        
+            
+
+</div>
+
+<div class="container">
+
 </div>
 
 <table class="center" width="100%"  cellspacing="30" style="border-spacing: 30px;background-color: #1A1E1F;" border="0">
