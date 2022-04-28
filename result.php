@@ -19,15 +19,13 @@ clearstatcache();
 
 ?>
 <? echo"$_SESSION" ?>
-<div class="topnav">
-    <form method="POST" action="index.php">
-    <table width="25%" padding="0" margin="0" border="0">
-        <tr> 
-            <td style="vertical-align: center;">
-                <label for="coin"> Choose yourcoin to predic :</label>
-            </td>
-            <td style="vertical-align: bottom;">
-                <select name="coin" class="classic" onchange="OnSelectionChange()">
+<div class="navbar" style="background-color: #333D3F;padding:3px;border-radius:15px;">
+<ul style="list-style-type: none;">
+  <li style="display: inline;"> Choose yourcoin to predic :</li>
+
+  <li style="display: inline;">
+
+  <select name="coin" class="classic" onchange="OnSelectionChange()">
                 <?php
                 if (($handle = fopen("cyrpto_link.csv", "r")) !== FALSE) {
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -41,17 +39,19 @@ clearstatcache();
                     fclose($handle);
                 }
                 ?>
-                </select>
-            </td>
-            <td style="vertical-align: top;">
-                <input type="submit" name="submit" value="Submit this pair"/>
-            </td>
-        </tr>
-    </table>
-    </form>
-        
-            
+ </select>
 
+
+</li>
+
+
+        <li style="display: inline;">
+       
+                <input type="submit" name="submit" value="Submit this pair" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;"/>
+
+        </li>
+        
+</ul>
 </div>
 
 <div class="container">
@@ -59,7 +59,7 @@ clearstatcache();
 </div>
 
 <table class="center" width="100%"  cellspacing="30" style="border-spacing: 30px;background-color: #1A1E1F;" border="0">
-    <td width="20%" style="background-color: #283134;">
+    <td width="20%" style="background-color: #283134;border-radius:15px;">
         <h2><?php
         
         
@@ -70,15 +70,17 @@ clearstatcache();
         $coinname=shell_exec("python getcoinname.py "  .$link);
         echo"$coinname";
         ?></h2>
+
         <form method="POST" action="result.php">
 
-        <label for="open">ราคาเปิดของวัน :</label><br>
+        <label for="open">ราคาเปิดของวัน</label><br>
         <input type="text" id="open" name="open"><br>
-        <label for="high">ราคาสูงสุดของวัน :</label><br>
+        <label for="high">ราคาสูงสุดของวัน</label><br>
         <input type="text" id="high" name="high"><br>
-        <label for="low">ราคาต่ำสุดของวัน :</label><br>
+        <label for="low">ราคาต่ำสุดของวัน</label><br>
         <input type="text" id="low" name="low"><br>
         <br>
+        
         <?php
         if(isset($_POST['submit']) && $_POST["open"] != NULL && $_POST["high"] != NULL && $_POST["low"] != NULL){
                 $open = $_POST["open"];
@@ -90,10 +92,10 @@ clearstatcache();
             }
             ?>
             <br>
-        <input type="submit" name="submit" value="Submit this pair"/>
+        <input type="submit" name="submit" value="SUBMIT THIS PAIR"/>
         <br>
 
-        <a href="<?php echo $_SESSION["link"]; ?>">download raw CSV</a>
+        <a href="<?php echo $_SESSION["link"]; ?>">DOWNLOAD RAW CSV</a>
         </form>
         
     </td>
@@ -113,14 +115,14 @@ clearstatcache();
         //    }
         ?>
     </td>-->
-    <td width="65%" style="background-color: #283134;">
-        <div id="container">
+    <td width="65%" style="background-color: #283134;border-radius:15px;">
+        <div id="container" style="padding:10px;">
             <script src="https://code.highcharts.com/highcharts.js"></script>
             <script src="https://code.highcharts.com/modules/data.js"></script>
             <script src="https://code.highcharts.com/modules/exporting.js"></script>
         </div>
     </td>
-    <td width="15%" style="background-color: #283134;">       
+    <td width="15%" style="background-color: #283134;border-radius:15px;padding:20px;">       
            <?php echo file_get_contents("priceTable.php"); ?>      
     </td>
 </table>
@@ -132,25 +134,46 @@ clearstatcache();
     chart: {
         type: 'spline',
         backgroundColor: '#283134',
-        color: '#fffeff',
+        color: '#fafbfd',
         negativeColor: '#08d169'
     },
     title: {
-        text: 'Predicting price'
+        text: 'Predicting price',
+        style: {
+            color: '#fafbfd'
+        }
     },
 
     subtitle: {
         text: 'Data input from CSV file'
     },
-    plotOptions: {
-        areaspline: {
-            lineColor: '#fffeff'
-        }
+
+    legend: {
+        itemStyle: {
+            color: '#fafbfd'
+        }  
     },
+    
     data: {
         csvURL: './predic_pair.csv',
         enablePolling: true
-    }
+    },
+
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        }
+      }
+    },
+    series: [{
+      lineWidth: 1
+    }, {
+      type: 'spline',
+      color: '#08d169',
+      negativeColor: '#5679c4',
+      fillOpacity: 0.5
+    }]   
 });
 </script>
   

@@ -18,9 +18,9 @@
 <?php
 
 $data = $_POST["coin"]; 
-//$output=shell_exec("python toMl.py "  .$data);
-//$getCoinPrice=shell_exec("python getCoinPrice.py");
-//$genTableCoinPrice=shell_exec("python getPriceTable.py");
+$output=shell_exec("python toMl.py "  .$data);
+$getCoinPrice=shell_exec("python getCoinPrice.py");
+$genTableCoinPrice=shell_exec("python getPriceTable.py");
 #echo $output;
 header("Location: result.php");
 exit();
