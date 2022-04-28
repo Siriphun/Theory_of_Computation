@@ -21,7 +21,7 @@ clearstatcache();
 <? echo"$_SESSION" ?>
 <div class="navbar" style="background-color: #333D3F;padding:3px;border-radius:15px;">
 <ul style="list-style-type: none;">
-  <li style="display: inline;"> Choose yourcoin to predic :</li>
+  <li style="display: inline;"> เลือกเหรียญที่จะทำนาย :</li>
 
   <li style="display: inline;">
 
@@ -47,7 +47,7 @@ clearstatcache();
 
         <li style="display: inline;">
        
-                <input type="submit" name="submit" value="เลือกเหรียญ" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;"/>
+                <input type="submit" name="submit" value="ยืนยัน" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;"/>
 
         </li>
         
