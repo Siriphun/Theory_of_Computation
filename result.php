@@ -47,7 +47,7 @@ clearstatcache();
 
         <li style="display: inline;">
        
-                <input type="submit" name="submit" value="Submit this pair" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;"/>
+                <input type="submit" name="submit" value="เลือกเหรียญ" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;"/>
 
         </li>
         
@@ -92,7 +92,7 @@ clearstatcache();
             }
             ?>
             <br>
-        <input type="submit" name="submit" value="SUBMIT THIS PAIR"/>
+        <input type="submit" name="submit" value="ทำนายราคาเหรียญ"/>
         <br>
 
         <a href="<?php echo $_SESSION["link"]; ?>">DOWNLOAD RAW CSV</a>
