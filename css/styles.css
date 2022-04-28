@@ -1,18 +1,20 @@
-table td, table td * {
-    vertical-align: top;
+table td,
+table td * {
+  vertical-align: top;
 }
 
 
-body{
-    background-color: #1A1E1F;
-    color:#ffffff ;
-    font-family: 'IBM Plex Sans Thai', sans-serif;
-    margin: 40px;
+body {
+  background-color: #1A1E1F;
+  color: #ffffff;
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  margin: 40px;
 }
+
 #container {
-    min-width: 310px;
-    height: 400px;
-    margin: 0 auto;
+  min-width: 310px;
+  height: 400px;
+  margin: 0 auto;
 }
 
 .center {
@@ -20,102 +22,102 @@ body{
   margin-right: auto;
 }
 
-.choose{
- background-color: #ffffff;
- color:white ;
+.choose {
+  background-color: #ffffff;
+  color: white;
 
 }
 
 .center {
-    background-color: #283234;
-    border-radius: 15px 15px 15px 20px;
-    float: left;
-    margin: 10px;
-    
+  background-color: #283234;
+  border-radius: 15px 15px 15px 20px;
+  float: left;
+  margin: 10px;
+
 }
 
-.center h2{
-    text-align: center;
-    padding: 10px;
-    background-color: #333D3F;
-    border-radius: 15px 15px 0px 0px;
+.center h2 {
+  text-align: center;
+  padding: 10px;
+  background-color: #333D3F;
+  border-radius: 15px 15px 0px 0px;
 }
 
 
 .center form {
-   
-    margin: 40px;
-    margin-top: 10px;
-    
+
+  margin: 40px;
+  margin-top: 10px;
+
 }
 
-.center form input[type=text]{
-    border-radius: 5px;
-    height:30px;
-    width: 200px;
-    background-color:#5F6364 ;
-    color: white;
-    margin-bottom: 10px;
+.center form input[type=text] {
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  background-color: #5F6364;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .center form input[type=text]:focus {
-    border: 0px solid #555;   
+  border: 0px solid #555;
 }
 
-.center form input[type=submit]{
-    border-radius: 5px;
-    height:30px;
-    width: 200px;
-    background-color:#02D868 ;
-    color: white;
-    margin-bottom: 50px;
+.center form input[type=submit] {
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  background-color: #02D868;
+  color: white;
+  margin-bottom: 50px;
 }
 
-.center  a {
-    padding-left:30px;
-    text-align: center;
-    color: #0AAE5C;
-    font-size: 14px;
-   
+.center a {
+  padding-left: 30px;
+  text-align: center;
+  color: #0AAE5C;
+  font-size: 14px;
+
 }
 
 
 
 
-.graph script{
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -100px;
+.graph script {
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
 }
 
 /*--------topbar ----------*/
 .topnav {
-    overflow: hidden;
-    background-color: #333d3f;
-    position: relative;
-    border-radius: 15px;
-  }
-  
-.topnav label {
-float: left;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
+  overflow: hidden;
+  background-color: #333d3f;
+  position: relative;
+  border-radius: 15px;
 }
 
-.topnav form input[type=submit]{
-    border-radius: 5px;
-    height:50px;
-    width: 200px;
-    background-color:#02D868 ;
-    color: white;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.topnav label {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav form input[type=submit] {
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+  background-color: #02D868;
+  color: white;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 
@@ -123,61 +125,59 @@ font-size: 17px;
 /*  ----Select---- */
 select {
 
-    /* styling */
-    background-color: white;
-    border: thin solid blue;
-    border-radius: 4px;
-    display: inline-block;
-    font: inherit;
-    line-height: 1.5em;
-    
-    padding: 0.5em 3.5em 0.5em 1em;
-    padding-top: 10px;
-    /* reset */
-  
-    margin: 0;      
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-  
-  
-  /* arrows */
-  
-  select.classic {
-    background-image:
-      linear-gradient(45deg, transparent 50%, blue 50%),
-      linear-gradient(135deg, blue 50%, transparent 50%),
-      linear-gradient(to right, skyblue, skyblue);
-    background-position:
-      calc(100% - 20px) calc(1em + 2px),
-      calc(100% - 15px) calc(1em + 2px),
-      100% 0;
-    background-size:
-      5px 5px,
-      5px 5px,
-      2.5em 2.5em;
-    background-repeat: no-repeat;
-  }
-  
-  select.classic:focus {
-    background-image:
-      linear-gradient(45deg, white 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, white 50%),
-      linear-gradient(to right, gray, gray);
-    background-position:
-      calc(100% - 15px) 1em,
-      calc(100% - 20px) 1em,
-      100% 0;
-    background-size:
-      5px 5px,
-      5px 5px,
-      2.5em 2.5em;
-    background-repeat: no-repeat;
-    border-color: grey;
-    outline: 0;
-  }
-  
-  
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+
+  padding: 0.5em 3.5em 0.5em 1em;
+  padding-top: 10px;
+  /* reset */
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+/* arrows */
+
+select.classic {
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
