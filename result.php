@@ -21,6 +21,7 @@
 
     ?>
     <? echo "$_SESSION" ?>
+    <form method="POST" action="index.php">
     <div class="navbar" style="background-color: #333D3F;padding:3px;border-radius:15px;">
         <ul style="list-style-type: none;">
             <li style="display: inline;"> เลือกเหรียญที่จะทำนาย :</li>
@@ -55,7 +56,7 @@
 
         </ul>
     </div>
-
+    </form>
     <div class="container">
 
     </div>
