@@ -49,7 +49,7 @@
 
             <li style="display: inline;padding-left:5px;">
 
-                <input type="submit" name="submit" value="ยืนยัน" style="border-radius: 5px; height:50px;width: 200px;background-color:#02D868 ;color: white;font-size: 16px;" />
+                <input type="submit" name="submit" value="ยืนยัน" style="border-radius: 5px; height:40px;width: 200px;background-color:#02D868 ;color: white;font-size: 16px;" />
 
             </li>
 
